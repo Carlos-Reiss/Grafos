@@ -11,7 +11,7 @@ public class Arq {
     public ArrayList Arq(){     
         ArrayList linhas = new ArrayList();
         try{
-            BufferedReader leitor = new BufferedReader(new FileReader("C:/Users/Carlos Reis/Desktop/Grafos/teste.txt"));
+            BufferedReader leitor = new BufferedReader(new FileReader("C:/Users/Carlos Reis/Documents/NetBeansProjects/Grafos/teste.txt"));
             String linha = leitor.readLine();
             while(linha!= null){
                 linhas.add(linha);

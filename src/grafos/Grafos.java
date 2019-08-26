@@ -10,10 +10,6 @@ public class Grafos {
         ArrayList vet = new ArrayList();
         Arq arquivo = new Arq(); 
         vet = arquivo.Arq();       
-        MatrizAdj matriz = new MatrizAdj(6,6);
-        matriz.AdicionarArcos(0,0);
-        matriz.VerificarSucessoresVert();
-        
         /*
             for(int i = 0; i < vet.size();i++){
                System.out.println(vet.get(i));
