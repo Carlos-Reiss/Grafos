@@ -60,8 +60,7 @@ public class ListaEnca {
            System.out.print("Sem arestas!");
        }
        while(aux != null){
-            char car = (char)(aux.getValue() + 65);
-           System.out.println(car+" ");
+           System.out.print(aux.getValue()+" ");
            aux = aux.getNext();
        }
    }
