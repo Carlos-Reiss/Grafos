@@ -9,10 +9,26 @@ public class ListaEnca {
             this.first = novo;
             this.last = novo;
         }
-        else{
+        else if(last.getValue() < numero){
             Node novo = new Node(numero);
             last.setNext(novo);
             last = novo;
+        }
+        else if(first.getValue() > numero){
+            Node novo = new Node(numero);
+            novo.setNext(first);
+            first = novo;
+        }
+        else{
+            Node aux = first.getNext();
+            while(aux != null){
+                if(aux.getValue() > numero){
+                    Node novo = new Node(numero);
+                    novo.setNext(aux);
+                } else {
+                    aux = aux.getNext();
+                }
+            }
         }
     }
     public int buscar( int aresta){

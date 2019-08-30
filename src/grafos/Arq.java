@@ -1,12 +1,10 @@
 package grafos;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
 public class Arq {
-      
+     
     public ArrayList Arq(){     
         ArrayList linhas = new ArrayList();
         try{
@@ -15,7 +13,6 @@ public class Arq {
             while(linha!= null){
                 linhas.add(linha);
                 linha = leitor.readLine();
-                //System.out.println(linha);                
             }
             leitor.close();
         }catch(IOException ioe){

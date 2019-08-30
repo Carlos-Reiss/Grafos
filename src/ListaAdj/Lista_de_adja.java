@@ -23,8 +23,8 @@ public class Lista_de_adja {
     public void VerificarSucessoresVert(){
         System.out.println("Lista de Sucessores");
         for(int i = 0; i < this.vertices.length;i++){
-            char car = (char)(i + 65);
-            System.out.println(car+":");
+            //char car = (char)(i + 65);
+            //System.out.println(car+":");
             vertices[i].Exibir();
             System.out.println("");
         }
@@ -33,8 +33,8 @@ public class Lista_de_adja {
     public void exibir() {
         System.out.println("Numero de vertices: "+vertices.length);
         for(int i=0;i < vertices.length; i++){
-            char car = (char)(i + 65);
-            System.out.println(car+":");
+            //char car = (char)(i + 65);
+            //System.out.println(car+":");
             vertices[i].Exibir();
             System.out.println("");
         }

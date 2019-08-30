@@ -20,8 +20,8 @@ public class MatrizAdj {
     public void VerificarSucessoresVert(){
         System.out.println("Lista de Sucessores");
         for(int l = 0; l < this.matriz.length;l++){
-            char car = (char)(l + 65);
-            System.out.print(car);
+            //char car = (char)(l + 65);
+            System.out.print(l);
                 for(int c = 0; c < this.matriz[0].length;c++){
                    System.out.print("\t");
                     System.out.print(matriz[l][c]);
