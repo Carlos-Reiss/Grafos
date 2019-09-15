@@ -11,7 +11,6 @@ public class Extension_Search {
 	public Extension_Search(GrafosLE grafo, int start) {
 		// busca em extensao BFS
 		ArrayDeque<Integer> fila = new ArrayDeque<Integer>();
-		int u,va;
 		
 		Cor cor[] = new Cor[grafo.getTamnho()];
 		int d[] = new int[grafo.getTamnho()];
@@ -20,33 +19,30 @@ public class Extension_Search {
 		 * aqui iremos fazer a incializaçao de todos os vetores e 
 		 * vamos seguir ao codigo
 		 */		
-		for(u = 0; u < grafo.getTamnho();u++){
+		for(int u = 0; u < grafo.getTamnho();u++){
 			cor[u] = Cor.Branco;
 			d[u] = Integer.MAX_VALUE;
 			ante[u] = -1;
+			//System.out.println("indice:"+u+"\tCor:"+cor[u]+"\td:"+d[u]+"\tante:"+ante[u]);
 		}
+		fila.add(start);
 		cor[start] = Cor.Cinza;
 		d[start] = 0;
-		System.out.println("start: "+start);
-		fila.add(start);
-
+		ante[start]= -1;
+		int u;
 		while(!fila.isEmpty()) {
 			u = fila.remove();
-			System.out.println(u);
-			List a[] = grafo.getAdjacencia();
-	        for(int i = 0; i < a.length;i++) {
-	        	List lista = a[i];
-	        	System.out.println(lista);
-	        	for( int v = 0; v < lista.size(); v++) {  		
-	        		va = (int) lista.get(v);
-	        		if(cor[va] == Cor.Branco) {
-						cor[va] = Cor.Cinza;
-						d[va] = d[u]+1;
-						ante[v] = u;
-						fila.add(va);
-					}
-					cor[u] = Cor.Preto;
-	        	}
+			
+			List a = grafo.getListaEsp(u);
+	        for(int i = 0; i < a.size();i++) {
+        		int v = (int) a.get(i);
+        		if (cor[v] == Cor.Branco) {
+					fila.add(v);
+        			cor[v] = Cor.Cinza;
+					d[v] = d[u]+1;
+					ante[v] = u;
+				}
+        		cor[u] = Cor.Preto;
 	        }
 		}
 		for(int i = 0; i <grafo.getTamnho();i++) {

@@ -1,5 +1,6 @@
 package GrafoLista;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +26,8 @@ public class GrafosLE {
 	public void exibir() {
 		for(int i = 0; i < vet.length;i++) {
 			List a = vet[i];
-			System.out.print(i+":");	
+			Collections.sort(a);
+			System.out.print(i+" : ");	
 			System.out.println(a);
 		}
 	}
