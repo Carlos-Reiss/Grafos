@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import GrafoLista.GrafosLE;
+import Search.Deep_Search;
 import Search.Extension_Search;
 
 public class Grafos {
@@ -30,8 +31,9 @@ public class Grafos {
 		grafo.addAresta(5, 5);
 		System.out.println("Exibindo:");
 		grafo.exibir();
-		Extension_Search BFS = new Extension_Search(grafo, 5);
-		BFS.Print_path(5, 0);
-		
+		//Extension_Search BFS = new Extension_Search(grafo, 5);
+		//BFS.Print_path(5, 0);
+		Deep_Search DFS = new Deep_Search(grafo, 5);
+		DFS.exibir();
 	}
 }
