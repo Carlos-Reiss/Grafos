@@ -26,7 +26,7 @@ public class GrafosLE {
 	public void exibir() {
 		for(int i = 0; i < vet.length;i++) {
 			List a = vet[i];
-			Collections.sort(a);
+			//Collections.sort(a);
 			System.out.print(i+" : ");	
 			System.out.println(a);
 		}

@@ -9,7 +9,7 @@ public class Deep_Search {
 	int fim[];
 	int inicio[];
 	Cor cor[];
-	public int time;
+	int time;
 	
 	public void DFS_Visit(GrafosLE grafo, int u) {
 		cor[u] = Cor.Cinza;
@@ -22,12 +22,12 @@ public class Deep_Search {
     			ante[v] = u;
     			DFS_Visit(grafo, v);
     		}
-    		cor[u]= Cor.Preto;
-    		fim[u] = time++;
         }
+        cor[u]= Cor.Preto;
+        fim[u] = time++;
 	}
 	
-	public Deep_Search(GrafosLE grafo, int s) {
+	public Deep_Search(GrafosLE grafo) {
 		cor = new Cor[grafo.getTamnho()];
 		inicio = new int[grafo.getTamnho()];
 		ante = new int[grafo.getTamnho()];
@@ -38,28 +38,16 @@ public class Deep_Search {
 		 */		
 		for(int i = 0; i < grafo.getTamnho();i++){
 			cor[i] = Cor.Branco;
-			inicio[i] = -1;
-			fim[i] = -1;
+			inicio[i] = fim[i] = -1;
 			ante[i] = -1;
 			//System.out.println("indice:"+i+"\tCor:"+cor[i]+"\tinicio:"+inicio[i]+"\tante:"+ante[i]+"\t fim:"+fim[i]);
-		}		
-		
-		List a[] = grafo.getAdjacencia();
-        for(int i = 0; i < a.length;i++) {
-        	List aux = a[i];
-        	for(int v = 0; v < aux.size(); v++) {
-        		cor[v] = Cor.Branco;
-        		int f = fim[v] = -1;
-        		inicio[v] = f;
-        		ante[v] = -1;        		
+		}	
+        time = 1;
+        for(int v = 0; v < grafo.getTamnho();v++){
+        	if(cor[v] == Cor.Branco) {
+            	DFS_Visit(grafo, v);	
         	}
         }
-        time = 1;
-        DFS_Visit(grafo, s);
-		/*
-		 * for(int i = 0; i < a.length;i++) { List aux = a[i]; for(int v = 0; v <
-		 * aux.size(); v++) { if(cor[v] == Cor.Branco) { DFS_Visit(grafo, s); } } }
-		 */
 	}
 	public void exibir() {
 		for(int i = 0; i < cor.length;i++){

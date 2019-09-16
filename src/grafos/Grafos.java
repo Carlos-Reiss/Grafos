@@ -29,11 +29,14 @@ public class Grafos {
 		grafo.addAresta(4, 3);
 		grafo.addAresta(5, 2);
 		grafo.addAresta(5, 5);
-		System.out.println("Exibindo:");
+		System.out.println("Exibindo Grafo:");
 		grafo.exibir();
-		//Extension_Search BFS = new Extension_Search(grafo, 5);
-		//BFS.Print_path(5, 0);
-		Deep_Search DFS = new Deep_Search(grafo, 5);
+		System.out.println("Exibindo Busca em Extensão :");
+		Extension_Search BFS = new Extension_Search(grafo, 0);
+		System.out.println("Exibindo menor caminho :");
+		BFS.Print_path(0, 5);		
+		System.out.println("Exibindo Busca em Profundidade :");
+		Deep_Search DFS = new Deep_Search(grafo);
 		DFS.exibir();
 	}
 }
