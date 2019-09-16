@@ -33,7 +33,7 @@ public class Deep_Search {
 		ante = new int[grafo.getTamnho()];
 		fim = new int[grafo.getTamnho()];
 		/*
-		 * aqui iremos fazer a incializaçao de todos os vetores e 
+		 * aqui iremos fazer a incializaÃ§ao de todos os vetores e 
 		 * vamos seguir ao codigo
 		 */		
 		for(int i = 0; i < grafo.getTamnho();i++){
@@ -41,6 +41,7 @@ public class Deep_Search {
 			inicio[i] = fim[i] = -1;
 			ante[i] = -1;
 			//System.out.println("indice:"+i+"\tCor:"+cor[i]+"\tinicio:"+inicio[i]+"\tante:"+ante[i]+"\t fim:"+fim[i]);
+<<<<<<< HEAD
 		}	
         time = 1;
         for(int v = 0; v < grafo.getTamnho();v++){
@@ -48,6 +49,19 @@ public class Deep_Search {
             	DFS_Visit(grafo, v);	
         	}
         }
+=======
+		}		
+		time = 1;
+		List a[] = grafo.getAdjacencia();
+		for(int i = 0; i < a.length;i++) {
+			List aux = a[i];
+			for(int v = 0; v < aux.size(); v++) {
+				if(cor[v] == Cor.Branco) {
+					DFS_Visit(grafo, s);
+				}	
+			}
+		}
+>>>>>>> 346cd20d96d7bc5dd813c46c384cd6f9f1870b9e
 	}
 	public void exibir() {
 		for(int i = 0; i < cor.length;i++){
