@@ -9,7 +9,7 @@ public class Deep_Search {
 	int fim[];
 	int inicio[];
 	Cor cor[];
-	public int time;
+	int time;
 	
 	public void DFS_Visit(GrafosLE grafo, int u) {
 		cor[u] = Cor.Cinza;
