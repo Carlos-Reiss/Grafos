@@ -21,7 +21,26 @@ public class GrafosLE {
 	}
 	public void addAresta(int origem, int destino) {
 		// temos o grafo criado vamos diretamente na posicao dele e inserimos a aresta
-		vet[origem].add(destino);
+		LinkedList<Integer> lista = (LinkedList<Integer>) vet[origem];
+		
+		
+		if(lista.size() == 0) {
+			lista.add(destino);
+		}
+		else if( lista.get(0) > destino) {
+			lista.add(0, destino);
+		}
+		else if( lista.get(lista.size()-1) < destino) {
+			lista.add(lista.size(), destino);
+		}
+		else{
+            int i = 0;
+	            while (lista.get(i) < destino) {
+	                i++;
+	            }
+            lista.add(i, destino);
+        }
+		vet[origem] = lista;
 	}
 	public void exibir() {
 		for(int i = 0; i < vet.length;i++) {

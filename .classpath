@@ -3,5 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="dist/Grafos.jar"/>
+	<classpathentry kind="lib" path="Grafos/src/grafos/Grafos.java"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
