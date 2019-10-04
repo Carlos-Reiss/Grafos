@@ -56,7 +56,7 @@ public class Extension_Search {
         }
         else {
             if(ante[v] == -1) {
-                System.out.println("n�o h� caminho");
+                System.out.println("Não há caminho");
             }
             else{
                 Print_path(s,ante[v]);

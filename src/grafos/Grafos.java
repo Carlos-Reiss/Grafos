@@ -1,9 +1,5 @@
 package grafos;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import GrafoLista.GrafosLE;
 import Search.Deep_Search;
 import Search.Extension_Search;
@@ -12,7 +8,7 @@ public class Grafos {
 
     public static void main(String[] args) {
 
-        GrafosLE grafo = new GrafosLE(6);
+       GrafosLE grafo = new GrafosLE(6);
         System.out.println("Adicionando...");
         grafo.addAresta(0, 3);
         grafo.addAresta(0, 1);
@@ -39,5 +35,7 @@ public class Grafos {
         System.out.println("Exibindo Busca em Profundidade :");
         Deep_Search DFS = new Deep_Search(grafo);
         DFS.exibir();
+        DFS.Ordena_TopLog(grafo);
+        DFS.exibirPilha();
     }
 }
